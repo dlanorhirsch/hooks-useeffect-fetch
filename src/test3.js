@@ -2,22 +2,25 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 
-export default () => {
-  const [people, setPeople] = useState(null);
 
+
+function FetchData() {
+  const [people, setPeople] = useState([]);
+
+  async function fetchPeople(){
+  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+  const json = await response.json();
+  setPeople(json);
+  }
   useEffect(() => {
-    async function App(){
+    fetchPeople();
+  }, []);
 
-    const response = await fetch('https://jsonplaceholder.typicode.com/users');
-    const data = await response.json();
-    setPeople(data);
-  }}, []);
 
 return (
-  <div className="container-fluid">
-    <div className="row">
-      {
-        people.map(data => 
+  
+  <div>
+      {people.map(data => 
         <div key={data.id}>
         <div className="list">
           <li className="header">{data.name}</li>
@@ -39,8 +42,11 @@ return (
        )
       }
     </div>
-   </div>
+ 
+
   );
 };
 
-// ReactDOM.render(<App />, document.getElementById('root'));
+
+ReactDOM.render(<FetchData />, document.getElementById('root'));
+export default FetchData;

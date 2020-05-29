@@ -32,4 +32,6 @@ export default function PeopleData() {
   </div>
   )
 }
+
+
 ReactDOM.render(<PeopleData />, document.getElementById('root'));
