@@ -2,27 +2,26 @@ import React from 'react';
 import {useState} from 'react';
 import ReactDOM from 'react-dom';
 
-export default function PeopleData() {
-  const [people, setPeople] = useState([]);
+function PeopleData() {
+  const [data, setData] = useState([]);
     
     const url = 'https://jsonplaceholder.typicode.com/users';
 
     try {
-      const res = fetch(url);
-      const data = res.json();
-      console.log(data);
-      setPeople(data);
+      const response = fetch(url);
+      const json = response.json;
+      setData(json);
 
     }
     catch(err){
       console.log(err);
     }
-  ;
+ 
   
   return (
-
+      
     <div>
-      {people.map(data =>
+      {data.map(data =>
       <div key={data.id}>
       <div>{data.name}</div>
       <div>{data.company.name}</div>
@@ -35,3 +34,4 @@ export default function PeopleData() {
 
 
 ReactDOM.render(<PeopleData />, document.getElementById('root'));
+export default PeopleData;
