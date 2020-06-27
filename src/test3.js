@@ -1,7 +1,5 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import ReactDOM from 'react-dom';
-
 
 
 function FetchData() {
@@ -48,5 +46,4 @@ return (
 };
 
 
-ReactDOM.render(<FetchData />, document.getElementById('root'));
 export default FetchData;

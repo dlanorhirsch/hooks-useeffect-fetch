@@ -3,7 +3,9 @@ import{ useEffect, useState } from 'react';
 
 
 // useFetch needs to be moved into the scope of the useEffect API, I think!
-const useFetch = (url) => {
+
+
+const UseFetch = (url) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -19,7 +21,20 @@ const useFetch = (url) => {
     }
 
   fetchData()
-  }, [])
-  return ( data, isLoading )
+  }, [url])
+
+  return (
+      <div>
+        <div>{isLoading}</div>
+        {data.map(data => <div key={data.id}>
+        <div>{data.name}</div>
+
+      </div>
+      )}
+    </div>
+  );
 }
-export default useFetch;
+
+
+
+export default UseFetch;

@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState} from 'react';
-import ReactDOM from 'react-dom';
+
 
 function PeopleData() {
   const [data, setData] = useState([]);
@@ -11,27 +11,22 @@ function PeopleData() {
       const response = fetch(url);
       const json = response.json;
       setData(json);
+      console.log(data)
 
     }
     catch(err){
       console.log(err);
     }
- 
-  
+    
   return (
-      
     <div>
-      {data.map(data =>
-      <div key={data.id}>
-      <div>{data.name}</div>
-      <div>{data.company.name}</div>
-      </div>
+      {data.map(data => <div key={data.id}>
+        <div>{data.name}</div>
+        </div>)}
+    </div>
 
-    )}
-  </div>
+
   )
 }
 
-
-ReactDOM.render(<PeopleData />, document.getElementById('root'));
 export default PeopleData;
