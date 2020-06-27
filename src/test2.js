@@ -11,8 +11,8 @@ function PeopleData() {
       const response = fetch(url);
       const json = response.json;
       setData(json);
-      console.log(data)
-
+      // console.log(data)
+     
     }
     catch(err){
       console.log(err);
@@ -20,11 +20,10 @@ function PeopleData() {
     
   return (
     <div>
-      {data.map(data => <div key={data.id}>
-        <div>{data.name}</div>
+      {data.map(item => <div key={item.id}>
+        <div>{item.name}</div>
         </div>)}
     </div>
-
 
   )
 }
