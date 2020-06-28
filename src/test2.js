@@ -11,8 +11,7 @@ function PeopleData() {
     // setData(json);
 
    
-      function fetchData(){
-  
+      function GetData(){
       fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
         .then(response => setData(response))
@@ -21,7 +20,7 @@ function PeopleData() {
       // console.log(data) 
 
       useEffect(() => {
-        fetchData();
+        GetData();
       }, []);
       
     
@@ -30,11 +29,13 @@ function PeopleData() {
   return (
     <div>
       {data.map(item => <div key={item.id}>
-        <div>{item.name}</div>
-        <div>{item.company}</div>
-        {/* <div>{item.email}</div>
-        <div>{item.phone}</div> */}
-        </div>)}
+        <div>
+          <li>{item.name}</li>
+          {/* <li>{item.company}</li>
+          <li>{item.phone}</li>
+          <li>{item.email}</li> */}
+        </div>
+      </div>)}
     </div>
 
   )
