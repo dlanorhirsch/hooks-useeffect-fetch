@@ -13,8 +13,7 @@ function FetchData() {
   useEffect(() => {
     fetchPeople();
   }, []);
-
-
+ 
 return (
   
   <div>

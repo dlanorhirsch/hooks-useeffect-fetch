@@ -3,7 +3,7 @@ import React from 'react';
 // import UseFetch from "./test1";
 
 import PeopleData from "./test2";
-// import FetchData from "./test3";
+import FetchData from "./test3";
 
 class App extends React.Component {
   render(){
@@ -16,7 +16,7 @@ class App extends React.Component {
           <div><PeopleData /></div>
         
         <h3>TEST 3</h3>
-          {/* <div><FetchData /></div> */}
+          <div><FetchData /></div>
       </>
    
     )
