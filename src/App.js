@@ -4,19 +4,45 @@ import React from 'react';
 
 import PeopleData from "./test2";
 import FetchData from "./test3";
+import MyData from './test4'
 
 class App extends React.Component {
   render(){
     return(
       <>
         <h3>TEST 1</h3> 
+          <ul>
+            <li>Function Component</li>
+            <li>useEffect</li>
+            <li>isLoading</li>
+            <li>map()</li>
+          </ul>
           {/* <div><UseFetch /></div> */}
 
         <h3>TEST 2</h3>
+          <ul>
+            <li>Function Component</li>
+            <li>useEffect</li>
+            <li>map()</li>
+          </ul>
           <div><PeopleData /></div>
         
         <h3>TEST 3</h3>
+          <ul>
+            <li>Function Component</li>
+            <li>async/await</li>
+            <li>useEffect</li>
+            <li>map()</li>
+          </ul>
           <div><FetchData /></div>
+
+        <h3>TEST 4</h3>
+        <ul>
+          <li>Class Component</li>
+          <li>Lifecycle method</li>
+          <li>map()</li>
+        </ul>
+          <div><MyData /></div>
       </>
    
     )

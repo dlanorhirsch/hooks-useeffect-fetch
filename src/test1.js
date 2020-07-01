@@ -23,7 +23,7 @@ const UseFetch = (url) => {
     }
 
   fetchData()
-  }, [url])
+  }, [])
 
   return (
       <div>
