@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import {useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 function PeopleData() {
   const [data, setData] = useState([]);
@@ -23,12 +22,17 @@ function PeopleData() {
     <div>
       {data.map(item => <div key={item.id}>
         <div>
-          <li>{item.name}</li>
-          {/* <li>{item.company}</li>
-          <li>{item.phone}</li>
-          <li>{item.email}</li> */}
-        </div>
-      </div>)}
+          <ol style={{
+            border: "1px solid grey",
+            borderRadius: "5px",
+            width: "250px",
+            }}>
+            <li style={{marginTop: "10px"}}>{item.name}</li>
+            <li>{item.company.name}</li>
+            <li>{item.phone}</li>
+            <li style={{marginBottom: "10px"}}>{item.email}</li>
+          </ol>
+        </div>      </div>)}
     </div>
 
   )
