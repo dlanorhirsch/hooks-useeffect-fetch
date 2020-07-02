@@ -1,24 +1,21 @@
 import React from 'react';
-// import './App.css';
-// import UseFetch from "./test1";
-
+import MyData from "./test1";
 import PeopleData from "./test2";
 import FetchData from "./test3";
-import MyData from './test4'
+import LifeCycles from "./lifecycles"
 
 class App extends React.Component {
   render(){
     return(
       <>
-        <h3>TEST 1</h3> 
-          <ul>
-            <li>Function Component</li>
-            <li>useEffect</li>
-            <li>isLoading</li>
-            <li>map()</li>
-          </ul>
-          {/* <div><UseFetch /></div> */}
-
+      <h3>TEST 1</h3>
+        <ul>
+          <li>Class Component</li>
+          <li>Lifecycle method</li>
+          <li>map()</li>
+        </ul>
+          <div><MyData /></div>
+      
         <h3>TEST 2</h3>
           <ul>
             <li>Function Component</li>
@@ -35,15 +32,10 @@ class App extends React.Component {
             <li>map()</li>
           </ul>
           <div><FetchData /></div>
-
-        <h3>TEST 4</h3>
-        <ul>
-          <li>Class Component</li>
-          <li>Lifecycle method</li>
-          <li>map()</li>
-        </ul>
-          <div><MyData /></div>
-      </>
+        
+        <h3>Lifecycle Demo</h3>
+</>
+  
    
     )
   }

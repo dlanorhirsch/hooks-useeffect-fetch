@@ -1,42 +1,40 @@
-import React from 'react';
-import{ useEffect, useState } from 'react';
+import React from 'react'
 
-
-// useFetch needs to be moved into the scope of the useEffect API, I think!
-
-
-const UseFetch = (url) => {
-  
-  const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    const url = 'https://jsonplaceholder.typicode.com/users'
-    const fetchData = async () => {
-      setIsLoading(true);
-      fetch(url)
-        .then((response) => response.json())
-        .then((result) => {
-          setData(result)
-          setIsLoading(false)
-        })
+export default class MyData extends React.Component{
+  constructor(){
+    super()
+      this.state = {
+        data: []
     }
-
-  fetchData()
-  }, [])
-
-  return (
-      <div>
-        {/* <div>{isLoading}</div>
-        {data.map(item => <div key={item.id}>
-        <div>{item.name}</div> */}
-
-      </div>
-      )}
-    </div>
-  );
+  }
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(data => this.setState({ data }));
+  }
+  render() {
+    return (
+        <div>
+            {this.state.data.map(item => <div key={item.id}>
+              <div style={{
+                border:"1px solid #aaa",
+                margin:"5px",
+                paddingLeft: "10px",
+                width: "300px"
+              }}> 
+                <h3>Name: {item.name}</h3>
+                <div>Company: {item.company.name}</div>
+                <div>User Name: {item.username}</div>
+                <div>Email: {item.email}</div>
+                <div>Item: {item.phone}</div>
+                <br />
+              </div>  
+            </div>)}
+        </div>
+    )
+  }
 }
 
 
 
-export default UseFetch;
+// export default MyData
