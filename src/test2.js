@@ -12,7 +12,7 @@ function PeopleData() {
 // The then()function takes 2 callback function parameters: onFullfilled(), onRejected().
 
       }
-      console.log(data) 
+      // console.log(data) 
 
       useEffect(() => {
         GetData();

@@ -34,6 +34,7 @@ class App extends React.Component {
           <div><FetchData /></div>
         
         <h3>Lifecycle Demo</h3>
+        <div><LifeCycles /></div>
 </>
   
    
